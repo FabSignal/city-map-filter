@@ -19,7 +19,7 @@ Código JavaScript reutilizable que permite filtrar servicios en un mapa según 
 
 ---
 
-## 🛠️ ¿Cómo funciona? (paso a paso)
+## 🛠️ ¿Cómo funciona? (detalle del código paso a paso)
 
 ### 1. Espera a que el DOM esté completamente cargado
 
