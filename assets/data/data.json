@@ -1,0 +1,37 @@
+{
+  "cities": {
+    "la_plata": {
+      "name": "La Plata",
+      "coords": [-34.9214, -57.9544]
+    },
+    "caba": {
+      "name": "CABA",
+      "coords": [-34.6037, -58.3816]
+    }
+  },
+  "institutions": [
+    {
+      "name": "Hospital LP",
+      "lat": -34.921,
+      "lng": -57.95,
+      "type": "hospital",
+      "city": "la_plata"
+    },
+    {
+      "name": "Restaurante GF",
+      "lat": -34.922,
+      "lng": -57.96,
+      "type": "restaurant",
+      "city": "la_plata"
+    },
+    {
+      "name": "Museo BA",
+      "lat": -34.603,
+      "lng": -58.38,
+      "type": "museum",
+      "city": "caba"
+    }
+  ]
+}
+
+

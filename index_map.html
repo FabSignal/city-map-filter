@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>City Services Map</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <main class="overlay">
+  <header class="header-card">
+    <h1>City Map Filter</h1>
+  </header>
+
+  <!-- Selector de ciudad -->
+  <div class="card selector-card">
+    <label for="city-select">Seleccioná una ciudad:</label>
+    <select id="city-select">
+      <option value="">Elegí una ciudad...</option>
+      <option value="la_plata">La Plata</option>
+      <option value="caba">Ciudad Autónoma de Buenos Aires</option>
+      <!-- Podés agregar más -->
+    </select>
+  </div>
+
+  <!-- Filtros sobre el mapa -->
+  <div class="card filter-card">
+    <label for="type-select">Filtrar por categoría:</label>
+    <select id="type-select">
+      <option value="">Todos</option>
+      <option value="hospital">Hospitales</option>
+      <option value="restaurant">Restaurantes (GF)</option>
+      <option value="museum">Museos</option>
+      <option value="salon">Peluquerías</option>
+    </select>
+  </div>
+
+  <!-- Mapa -->
+  <div class="card map-card">
+    <div id="map"></div>
+  </div>
+</main>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="assets/js/funcion_mapa.js"></script>
+ 
+</body>
+</html>
