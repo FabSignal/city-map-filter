@@ -15,7 +15,7 @@ Una función JavaScript reutilizable que permite filtrar servicios en un mapa se
 - **Reutilizable:** Se adapta fácilmente a nuevos datos sin modificar la lógica JS.
 - **Separación de datos y lógica:** Todos los datos están en un JSON, lo que facilita mantenimiento, escalabilidad y separación de responsabilidades.
 - **Accesible:** Funciona con un diseño minimalista y accesible desde cualquier navegador.
--**Tecnologías gratuitas y abiertas:** Utiliza herramientas como Leaflet, HTML, CSS y JavaScript puro, sin depender de servicios pagos o librerías propietarias, lo que facilita su implementación en proyectos públicos o de bajo presupuesto.
+- **Tecnologías gratuitas y abiertas:** Utiliza herramientas como Leaflet, HTML, CSS y JavaScript puro, sin depender de servicios pagos o librerías propietarias, lo que facilita su implementación en proyectos públicos o de bajo presupuesto.
 
 ---
 
