@@ -11,24 +11,45 @@
   },
   "institutions": [
     {
-      "name": "Hospital LP",
-      "lat": -34.921,
-      "lng": -57.95,
+      "name": "Hospital General San Martín",
+      "lat": -34.9126,
+      "lng": -57.9542,
       "type": "hospital",
       "city": "la_plata"
     },
     {
-      "name": "Restaurante GF",
-      "lat": -34.922,
-      "lng": -57.96,
-      "type": "restaurant",
+      "name": "Hospital Dr. Ricardo Rossi",
+      "lat": -34.9080,
+      "lng": -57.9400,
+      "type": "hospital",
       "city": "la_plata"
     },
     {
-      "name": "Museo BA",
-      "lat": -34.603,
-      "lng": -58.38,
+      "name": "Museo de La Plata",
+      "lat": -34.9087,
+      "lng": -57.9392,
       "type": "museum",
+      "city": "la_plata"
+    },
+    {
+      "name": "Confitería La París",
+      "lat": -34.9205,
+      "lng": -57.9529,
+      "type": "cafe",
+      "city": "la_plata"
+    },
+    {
+      "name": "MALBA (Museo de Arte Latinoamericano de Buenos Aires)",
+      "lat": -34.5824,
+      "lng": -58.3912,
+      "type": "museum",
+      "city": "caba"
+    },
+    {
+      "name": "Café Tortoni",
+      "lat": -34.6074,
+      "lng": -58.3756,
+      "type": "cafe",
       "city": "caba"
     }
   ]
