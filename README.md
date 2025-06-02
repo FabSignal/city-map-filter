@@ -1,8 +1,8 @@
-# 🌆 City Map Filter Function
+# 🌆 City Map Filter 
 
-Una función JavaScript reutilizable que permite filtrar servicios en un mapa según ciudad y categoría, cargando todos los datos desde un archivo JSON externo.
+Código JavaScript reutilizable que permite filtrar servicios en un mapa según ciudad y categoría, cargando todos los datos desde un archivo JSON externo.
 
-## 📌 ¿Qué hace esta función?
+## 📌 ¿Qué hace esta código?
 
 - Carga datos de ciudades e instituciones desde un archivo `data.json`.
 - Inicializa un mapa con Leaflet centrado en la ciudad seleccionada.
@@ -10,7 +10,7 @@ Una función JavaScript reutilizable que permite filtrar servicios en un mapa se
 
 ---
 
-## 🧠 ¿Por qué es útil o necesaria?
+## 🧠 ¿Por qué es útil o necesario?
 
 - **Reutilizable:** Se adapta fácilmente a nuevos datos sin modificar la lógica JS.
 - **Separación de datos y lógica:** Todos los datos están en un JSON, lo que facilita mantenimiento, escalabilidad y separación de responsabilidades.
