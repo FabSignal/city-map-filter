@@ -114,7 +114,7 @@ Esta función pone en marcha toda la aplicación. Cuando se ejecuta, desencadena
 ## 🌐 Ver la aplicación en funcionamiento
 
 Podés probar la funcionalidad del filtro en el mapa accediendo a la siguiente página:  
-🔗 
+🔗 https://fabsignal.github.io/city-map-filter/
 
 ---
 
