@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const citySelect = document.getElementById("city-select");
   const typeSelect = document.getElementById("type-select");
 
-  /**
-   * Load JSON data and initialize app
-   */
+  //
   async function loadAndInitializeMap() {
     try {
       const response = await fetch("assets/data/data.json");
@@ -26,11 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /**
-   * Fill the city dropdown with data from JSON
-   */
+  //
   function populateCityDropdown() {
-    citySelect.innerHTML = ""; // Clear previous options
+    citySelect.innerHTML = "";
 
     Object.entries(appData.cities).forEach(([key, city], index) => {
       const option = document.createElement("option");
@@ -41,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /**
-   * Initialize the Leaflet map using the first city
-   */
+//
   function initializeMap() {
     const selectedCityKey = citySelect.value;
     const coordinates = appData.cities[selectedCityKey].coords;
@@ -61,11 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }).addTo(map);
   }
 
-  /**
-   * Add and update map markers based on current selection
-   */
+//
   function updateMarkers() {
-    // Clear previous markers
     markers.forEach(marker => map.removeLayer(marker));
     markers = [];
 
@@ -87,14 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /**
-   * Attach listeners to update map when dropdowns change
-   */
+ 
+  //
   function attachEventListeners() {
     citySelect.addEventListener("change", updateMarkers);
     typeSelect.addEventListener("change", updateMarkers);
   }
 
-  // Call initializer
+  // 
   loadAndInitializeMap();
 });
