@@ -2,7 +2,7 @@
 
 Código JavaScript reutilizable que permite filtrar servicios en un mapa según ciudad y categoría, cargando todos los datos desde un archivo JSON externo.
 
-## 📌 ¿Qué hace esta código?
+## 📌 ¿Qué hace este código?
 
 - Carga datos de ciudades e instituciones desde un archivo `data.json`.
 - Inicializa un mapa con Leaflet centrado en la ciudad seleccionada.
@@ -60,16 +60,8 @@ Luego, para definir la interfaz de usuario, se llama a las funciones:
 - `updateMarkers()`:
   Se encarga de mostrar los marcadores correctos en el mapa, basándose en la ciudad y el tipo de institución que estén seleccionados en los menús desplegables. Primero, elimina todos los marcadores que puedan estar actualmente en el mapa (para evitar duplicados o marcadores incorrectos de una selección anterior). Luego, revisa los datos de `appData.institutions` y filtra solo aquellas instituciones que pertenecen a la ciudad seleccionada y que coinciden con el tipo de institución elegido (si hay un filtro de tipo). Finalmente, por cada institución filtrada, crea un marcador en el mapa, le añade un "popup" con su nombre y lo agrega a una lista para poder eliminarlo después. También centra el mapa en la ciudad seleccionada. Es la función que pone los "puntos de interés" en el mapa y asegura que solo se vean los relevantes para los filtros actuales. Se llama al inicio para mostrar los marcadores iniciales y cada vez que el usuario cambia los filtros.
 
-<<<<<<< HEAD
-- `attachEventListeners()`:
-  Configura los eventos de cambio ("listeners") que hacen que la aplicación responda a las acciones del usuario. "Escucha" los cambios en los menús desplegables de ciudad (`city-select`) y de tipo (`type-select`). Cada vez que el usuario selecciona una nueva opción en cualquiera de estos menús, `attachEventListeners` se asegura de que la función `updateMarkers()` se ejecute automáticamente. Esta función hace que la aplicación sea dinámica. Sin ella, el usuario podría cambiar los menús desplegables todo lo que quisiera, pero el mapa no se actualizaría.
-
 - Se utiliza `catch (error)` para el manejo de errores. Si la carga de datos (`fetch` o `response.json()`) falla dentro del bloque `try`, `catch` intercepta ese error, y luego registra un mensaje descriptivo y los detalles técnicos del error en la consola del navegador, alertando sobre el problema sin detener la ejecución de la aplicación.
 
-=======
-- Se utiliza `catch (error)` para el manejo de errores. Si la carga de datos (`fetch` o `response.json()`) falla dentro del bloque `try`, `catch` intercepta ese error, y luego registra un mensaje descriptivo y los detalles técnicos del error en la consola del navegador, alertando sobre el problema sin detener la ejecución de la aplicación.
-
->>>>>>> 4c668e0fc8d371b139149f9ea8ccc3bf1a514378
 En síntesis, la función `loadAndInitializeMap()`, luego de cargar los datos, ejecuta 4 funciones en secuencia para: preparar los menús (`populateCityDropdown()`), dibujar el mapa base (`initializeMap()`), añadir los marcadores iniciales (`updateMarkers()`), y configurar la interactividad para futuros cambios del usuario (`attachEventListeners()`).
 
 ---
@@ -136,8 +128,4 @@ Aunque este repositorio corresponde a un proyecto general, la función desarroll
 
 ## 👩‍💻 Autoría
 
-<<<<<<< HEAD
 Proyecto desarrollado por Fabiana.
-=======
-Proyecto desarrollado por Fabiana.
->>>>>>> 4c668e0fc8d371b139149f9ea8ccc3bf1a514378
