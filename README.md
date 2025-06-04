@@ -1,12 +1,12 @@
 # 🌆 City Map Filter 
 
-Código JavaScript reutilizable que permite filtrar servicios en un mapa según ciudad y categoría, cargando todos los datos desde un archivo JSON externo.
+Código JavaScript reutilizable que permite filtrar servicios en un mapa por ciudad y categoría, cargando todos los datos desde un archivo JSON externo.
 
 ## 📌 ¿Qué hace este código?
 
 - Carga datos de ciudades e instituciones desde un archivo `data.json`.
 - Inicializa un mapa con Leaflet centrado en la ciudad seleccionada.
-- Filtra dinámicamente los marcadores en función de la ciudad y el tipo seleccionado.
+- Filtra dinámicamente los marcadores según la ciudad y el tipo seleccionado.
 
 ---
 
@@ -52,7 +52,7 @@ Luego, para definir la interfaz de usuario, se llama a las funciones:
   Lee la lista de ciudades de `appData` y, por cada ciudad, crea un nuevo elemento `<option>` (una opción para el menú). Luego, añade estas opciones al elemento `<select>` de las ciudades en el HTML. También se asegura de que la primera ciudad de la lista quede preseleccionada al inicio. Sin esta función, el usuario vería un menú de ciudades vacío, y no podría elegir una ubicación.
 
 - `initializeMap()`:
-  Crea y configura el mapa interactivo en la página usando la librería Leaflet. Toma las coordenadas de la primera ciudad seleccionada (o la predeterminada) del menú desplegable de ciudades. Con esas coordenadas, crea una nueva instancia del mapa de Leaflet, la centra en esa ubicación y establece un nivel de zoom inicial. También añade la capa base del mapa, que son las imágenes del mapa (tiles) de OpenStreetMap. Es la función que hace que el mapa aparezca en la pantalla y se vuelva interactivo. Sin ella, no habría mapa.
+  Crea y configura el mapa interactivo en la página usando la librería Leaflet. Toma las coordenadas de la primera ciudad seleccionada (o la predeterminada) del menú desplegable de ciudades. Con esas coordenadas, crea una nueva instancia del mapa de Leaflet, la centra en esa ubicación y establece un nivel de zoom inicial. También añade la capa base del mapa, que son las imágenes del mapa (tiles) de OpenStreetMap. Es la función que inicializa el mapa interactivo en pantalla.. 
 
 - `attachEventListeners()`:
   Configura los "listeners" que hacen que la aplicación responda a las acciones del usuario. "Escucha" los cambios en los menús desplegables de ciudad (`city-select`) y de tipo (`type-select`). Cada vez que el usuario selecciona una nueva opción en cualquiera de estos menús, `attachEventListeners` se asegura de que la función `updateMarkers()` se ejecute automáticamente. Esta función hace que la aplicación sea dinámica. Sin ella, no se actualizaría el mapa cuando el usuario cambie las opciones en los menús desplegables.
@@ -66,19 +66,19 @@ En síntesis, la función `loadAndInitializeMap()`, luego de cargar los datos, e
 
 ---
 
-### 4. Detalle de `populateCityDropdown()`
+### Detalle de `populateCityDropdown()`
 
 Esta función dinámicamente construye y llena el menú desplegable de ciudades en la interfaz de usuario. Primero, limpia las opciones existentes (`citySelect.innerHTML = "";`). Luego, recorre cada ciudad en los datos de la aplicación (`Object.entries(appData.cities).forEach(...)`), creando un elemento `<option>` HTML para cada una (`const option = document.createElement("option");`), asignándole un valor interno (la clave de la ciudad) (`option.value = key;`) y un texto visible (el nombre de la ciudad) (`option.textContent = city.name;`). La primera opción se marca como seleccionada por defecto (`if (index === 0) option.selected = true;`). Finalmente, añade cada opción creada al menú desplegable (`citySelect.appendChild(option);`), haciendo que las ciudades sean seleccionables para el usuario.
 
 ---
 
-### 5. Detalle de `initializeMap()`
+### Detalle de `initializeMap()`
 
 Esta función se encarga de preparar el mapa de Leaflet. Primero, obtiene las coordenadas de la ciudad actualmente seleccionada del menú desplegable. Luego, si la clave de la ciudad no es válida o la ciudad no existe en los datos (`if (!selectedCityKey || !appData.cities[selectedCityKey])`), emite una advertencia y detiene su ejecución para prevenir errores. Asumiendo datos válidos, el código posterior utiliza estas coordenadas para crear la instancia del mapa y añadir su capa base visual.
 
 ---
 
-### 6. Se inicia y se hace visible el mapa
+### 4. Se inicia y se hace visible el mapa
 
 `map = L.map("map").setView(coordinates, 13);`: Crea el mapa interactivo en el `div` con `id="map"`, y lo centra en las `coordinates` de la ciudad seleccionada con un `zoom` de `13`. La instancia de este mapa se guarda en la variable `map`.
 
@@ -86,19 +86,19 @@ Esta función se encarga de preparar el mapa de Leaflet. Primero, obtiene las co
 
 ---
 
-### 7. Detalle de `updateMarkers()`
+### Detalle de `updateMarkers()`
 
 La función `updateMarkers()` es la encargada de filtrar y dibujar los marcadores en el mapa según las selecciones actuales del usuario. Primero, elimina todos los marcadores visibles anteriormente (`markers.forEach(marker => map.removeLayer(marker));`) y vacía su lista interna (`markers = [];`). Luego, obtiene los valores de los filtros (ciudad y tipo) (`const selectedCity = citySelect.value;` y `const selectedType = typeSelect.value;`) y centra el mapa en la ciudad seleccionada (`map.setView(cityCoords, 13);`). Finalmente, recorre todas las instituciones (`appData.institutions.forEach(inst => {...}`), y para cada una que cumpla los criterios de ciudad y tipo (`if (inst.city === selectedCity && (!selectedType || inst.type === selectedType))`), crea un marcador de Leaflet (`const marker = L.marker([inst.lat, inst.lng]).addTo(map);`), lo añade al mapa, le asocia un popup con su nombre (`marker.bindPopup(inst.name);`), y lo guarda en la lista de marcadores activos (`markers.push(marker);`).
 
 ---
 
-### 8. Detalle de `attachEventListeners()`
+### Detalle de `attachEventListeners()`
 
 Esta función es responsable de habilitar la **interactividad del mapa**. Adjunta un escuchador de eventos `change` a los menús desplegables de ciudad (`citySelect.addEventListener("change", updateMarkers);`) y tipo (`typeSelect.addEventListener("change", updateMarkers);`). Cuando el usuario modifica la selección en cualquiera de estos menús, se activa automáticamente la función `updateMarkers()`, lo que provoca que el mapa se actualice para reflejar los nuevos filtros.
 
 ---
 
-### 9. Llamada inicial a la función `loadAndInitializeMap()`
+### 5. Llamada inicial a la función `loadAndInitializeMap()`
 
 Esta función pone en marcha toda la aplicación. Cuando se ejecuta, desencadena la carga de datos, la configuración inicial del mapa y los menús, y la activación de la interactividad, asegurando que la aplicación esté lista para el usuario.
 
@@ -116,13 +116,14 @@ Esta función pone en marcha toda la aplicación. Cuando se ejecuta, desencadena
 ## 🌐 Ver la aplicación en funcionamiento
 
 Podés probar la funcionalidad del filtro en el mapa accediendo a la siguiente página:
+
 🔗 <https://fabsignal.github.io/city-map-filter/>
 
 ---
 
 ## 🧩 Aplicación en el proyecto Salud a Mano
 
-Aunque este repositorio corresponde a un proyecto general, la función desarrollada es especialmente útil para integrarse en **Salud a Mano - Portal de Salud Pública**. En ese proyecto, la posibilidad de filtrar hospitales y centros de salud por ciudad y por especialidad es clave para mejorar la experiencia del usuario. Implementar esta función permite que el mapa muestre únicamente las instituciones relevantes según la ubicación y necesidad del paciente, haciendo más rápida y efectiva la búsqueda de servicios médicos. Además, al mantener los datos en un archivo JSON externo, se facilita la actualización del listado sin tocar el código base, lo que es fundamental para escalar la solución a nivel nacional.
+Aunque este repositorio corresponde a un proyecto general, la función desarrollada es especialmente útil para integrarse en **Salud a Mano - Portal de Salud Pública**. En ese proyecto, la posibilidad de filtrar hospitales y centros de salud por ciudad y por especialidad es clave para mejorar la experiencia del usuario. Implementar esta función permite que el mapa muestre únicamente las instituciones relevantes según la ubicación y necesidad del paciente, optimizando la búsqueda de servicios médicos. Además, al mantener los datos en un archivo JSON externo, se facilita la actualización del listado sin tocar el código base, lo que es fundamental para escalar la solución a nivel nacional.
 
 ---
 
