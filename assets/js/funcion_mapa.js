@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         inst.city === selectedCity &&
         (!selectedType || inst.type === selectedType)
       ) {
-        const marker = L.marker([inst.lat, inst.lng]).addTo(map);
+        const marker = L.marker(inst.location).addTo(map);
         marker.bindPopup(inst.name);
         markers.push(marker);
       }

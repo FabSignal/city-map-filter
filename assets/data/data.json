@@ -12,45 +12,57 @@
   "institutions": [
     {
       "name": "Hospital Dr. Ricardo Rossi ",
-      "lat": -34.89654,
-      "lng": -57.95489,
+      "location": [-34.89654, -57.95489],
       "type": "hospital",
       "city": "la_plata"
     },
     {
       "name": "Hospital General San Martín",
-      "lat": -34.9080, 
-      "lng": -57.9400,
+      "location": [-34.92252642663594, -57.9231627723465],
       "type": "hospital",
       "city": "la_plata"
     },
     {
       "name": "Museo de La Plata",
-      "lat": -34.9087,
-      "lng": -57.9392,
+      "location": [-34.90874280272784, -57.93529974058632],
       "type": "museum",
       "city": "la_plata"
     },
     {
       "name": "Confitería La París",
-      "lat": -34.9205,
-      "lng": -57.9529,
+      "location": [-34.912715, -57.950979],
       "type": "cafe",
       "city": "la_plata"
     },
     {
+      "name": "Peluquería H2O",
+      "location":[-34.913831194980325, -57.95319717739828],
+      "type": "salon",
+      "city": "la_plata"
+    },
+    {
       "name": "MALBA (Museo de Arte Latinoamericano de Buenos Aires)",
-      "lat": -34.5824,
-      "lng": -58.3912,
+      "location":[-34.576733197341554, -58.40342829126576],
       "type": "museum",
       "city": "caba"
     },
     {
       "name": "Café Tortoni",
-      "lat": -34.6074,
-      "lng": -58.3756,
+      "location":[-34.600419680543666, -58.3918016937339],
       "type": "cafe",
       "city": "caba"
+    },
+    {
+      "name": "Roho",
+      "location":[-34.61520268072982, -58.43070738021072],
+      "type":"salon",
+      "city":"caba"
+    },
+    {
+      "name": "Hospital Garrahan",
+      "location":[-34.63063760321886, -58.39325785770151],
+      "type": "hospital",
+      "city":"caba"
     }
   ]
 }
